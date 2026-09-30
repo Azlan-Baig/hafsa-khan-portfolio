@@ -21,10 +21,10 @@ export default function WorkWithMePage() {
   };
 
   return (
-    <div style={{ padding: '80px 40px 140px', maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="page-container-responsive">
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
         gap: '60px',
         alignItems: 'start',
       }}>
@@ -32,7 +32,7 @@ export default function WorkWithMePage() {
         <div>
           <h1 style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(44px, 6vw, 84px)',
+            fontSize: 'clamp(40px, 6vw, 84px)',
             fontWeight: 900,
             lineHeight: 0.95,
             letterSpacing: '-0.02em',
@@ -41,7 +41,7 @@ export default function WorkWithMePage() {
             LET'S WORK TOGETHER
           </h1>
           <p style={{
-            fontSize: '19px',
+            fontSize: '18px',
             color: '#c4c4c4',
             lineHeight: 1.6,
             marginBottom: '40px',
@@ -61,12 +61,7 @@ export default function WorkWithMePage() {
         </div>
 
         {/* Right Column: Inquiry Form */}
-        <div style={{
-          backgroundColor: '#0c0c0c',
-          border: '1px solid #222',
-          padding: '48px',
-          borderRadius: '4px',
-        }}>
+        <div className="form-card-responsive">
           {submitted ? (
             <div style={{ textAlign: 'center', padding: '60px 20px' }}>
               <h3 style={{

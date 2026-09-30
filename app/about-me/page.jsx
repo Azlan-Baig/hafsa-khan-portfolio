@@ -18,16 +18,12 @@ export default function AboutPage() {
   return (
     <div style={{ paddingBottom: '120px' }}>
       {/* 1. Giant Hero Typography */}
-      <section style={{
-        padding: '100px 100px 40px',
-        maxWidth: '1600px',
-        margin: '0 auto',
-      }}>
+      <section className="about-hero-section">
         <h1 style={{
           fontFamily: 'var(--font-heading)',
-          fontSize: 'clamp(54px, 11vw, 180px)',
+          fontSize: 'clamp(44px, 10vw, 170px)',
           fontWeight: 500,
-          lineHeight: 0.85,
+          lineHeight: 0.88,
           color: '#383838',
           textTransform: 'uppercase',
           letterSpacing: '-0.02em',
@@ -39,17 +35,8 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Intro Section: Studio Photo + 30px Lead Paragraph */}
-      <section style={{
-        padding: '60px 100px 100px',
-        maxWidth: '1600px',
-        margin: '0 auto',
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-          gap: '50px',
-          alignItems: 'center',
-        }}>
+      <section className="about-section">
+        <div className="about-grid-2col">
           <div>
             <img
               src="/images/cj-cawley-about-me-3.jpg"
@@ -65,7 +52,7 @@ export default function AboutPage() {
           <div>
             <p style={{
               fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(22px, 2.5vw, 30px)',
+              fontSize: 'clamp(20px, 2.5vw, 30px)',
               fontWeight: 400,
               lineHeight: 1.4,
               color: '#FFFFFF',
@@ -77,21 +64,12 @@ export default function AboutPage() {
       </section>
 
       {/* 3. "Always Forward, Never Back" + 3 Paragraphs + GIF */}
-      <section style={{
-        padding: '100px 100px',
-        maxWidth: '1600px',
-        margin: '0 auto',
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-          gap: '50px',
-          alignItems: 'center',
-        }}>
+      <section className="about-section">
+        <div className="about-grid-2col">
           <div>
             <h2 style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(36px, 4.5vw, 50px)',
+              fontSize: 'clamp(32px, 4.5vw, 50px)',
               fontWeight: 500,
               textTransform: 'uppercase',
               color: '#FFFFFF',
@@ -102,7 +80,7 @@ export default function AboutPage() {
             </h2>
             <h2 style={{
               fontFamily: 'var(--font-script)',
-              fontSize: 'clamp(36px, 4.5vw, 50px)',
+              fontSize: 'clamp(32px, 4.5vw, 50px)',
               fontWeight: 500,
               textTransform: 'none',
               color: '#FFFFFF',
@@ -114,7 +92,7 @@ export default function AboutPage() {
 
             <div style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '20px',
+              fontSize: '18px',
               fontWeight: 400,
               lineHeight: 1.7,
               color: '#FFFFFF',
@@ -150,11 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Full Bleed Horizontal Photo */}
-      <section style={{
-        padding: '40px 100px 100px',
-        maxWidth: '1600px',
-        margin: '0 auto',
-      }}>
+      <section className="about-section" style={{ paddingTop: '20px' }}>
         <img
           src="/images/cj-cawley-about-me-6.jpg"
           alt="Studio atmosphere"
@@ -169,15 +143,10 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Helping Designers Build Careers */}
-      <section style={{
-        padding: '60px 100px 100px',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        textAlign: 'center',
-      }}>
+      <section className="about-section-narrow">
         <h2 style={{
           fontFamily: 'var(--font-heading)',
-          fontSize: 'clamp(36px, 5vw, 60px)',
+          fontSize: 'clamp(32px, 5vw, 60px)',
           fontWeight: 700,
           color: '#FFFFFF',
           lineHeight: 1.1,
@@ -187,7 +156,7 @@ export default function AboutPage() {
         </h2>
         <p style={{
           fontFamily: 'var(--font-body)',
-          fontSize: '20px',
+          fontSize: '18px',
           lineHeight: 1.7,
           color: '#c0c0c0',
           maxWidth: '920px',
@@ -198,21 +167,12 @@ export default function AboutPage() {
       </section>
 
       {/* 6. 1:1 Mentorship Block */}
-      <section style={{
-        padding: '60px 100px 120px',
-        maxWidth: '1600px',
-        margin: '0 auto',
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-          gap: '60px',
-          alignItems: 'center',
-        }}>
+      <section className="about-section">
+        <div className="about-grid-2col">
           <div>
             <h2 style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(40px, 6vw, 72px)',
+              fontSize: 'clamp(36px, 6vw, 72px)',
               fontWeight: 700,
               color: '#FFFFFF',
               lineHeight: 1.0,
@@ -222,7 +182,7 @@ export default function AboutPage() {
             </h2>
             <p style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '20px',
+              fontSize: '18px',
               lineHeight: 1.7,
               color: '#FFFFFF',
               marginBottom: '36px',
@@ -254,34 +214,24 @@ export default function AboutPage() {
       </section>
 
       {/* 7. Brands I Have Worked With */}
-      <section style={{
-        padding: '60px 100px 120px',
-        maxWidth: '1600px',
-        margin: '0 auto',
-      }}>
+      <section className="about-section">
         <h2 style={{
           fontFamily: 'var(--font-heading)',
-          fontSize: 'clamp(32px, 4vw, 50px)',
+          fontSize: 'clamp(28px, 4vw, 50px)',
           fontWeight: 700,
           color: '#FFFFFF',
           textAlign: 'center',
-          marginBottom: '60px',
+          marginBottom: '50px',
         }}>
           BRANDS I HAVE WORKED WITH
         </h2>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '40px',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+        <div className="about-brands-grid">
           {brandLogos.map((logo, idx) => (
             <div
               key={idx}
               style={{
-                padding: '30px',
+                padding: '24px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -294,7 +244,7 @@ export default function AboutPage() {
                 src={logo}
                 alt={`Client Brand ${idx + 1}`}
                 style={{
-                  maxHeight: '70px',
+                  maxHeight: '65px',
                   maxWidth: '100%',
                   objectFit: 'contain',
                   filter: 'brightness(1)',

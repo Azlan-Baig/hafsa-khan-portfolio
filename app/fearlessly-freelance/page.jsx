@@ -12,7 +12,7 @@ export default function FearlesslyFreelancePage() {
   };
 
   return (
-    <div style={{ padding: '80px 40px 140px', maxWidth: '1100px', margin: '0 auto' }}>
+    <div className="page-container-responsive" style={{ maxWidth: '1100px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <span style={{

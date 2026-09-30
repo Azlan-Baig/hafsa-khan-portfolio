@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-links">
         <a
-          href="https://www.youtube.com/@cjcawleydesign"
+          href="https://www.youtube.com/@hafsaarsalandesign"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-link"
@@ -13,7 +13,7 @@ export default function Footer() {
           YOUTUBE
         </a>
         <a
-          href="https://www.instagram.com/cj.cawley.design/"
+          href="https://www.instagram.com/hafsaarsalandesign/"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-link"
@@ -22,7 +22,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="footer-copyright">
-        © 2026 Cj Cawley All Rights Reserved
+        © 2026 Hafsa Arsalan All Rights Reserved
       </div>
     </footer>
   );

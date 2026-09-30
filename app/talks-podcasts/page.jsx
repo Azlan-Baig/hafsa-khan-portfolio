@@ -18,31 +18,31 @@ export default function TalksPodcastsPage() {
       title: 'The Logo Geek Podcast',
       type: 'Podcast Interview',
       desc: 'Deep dive into crafting distinct brand marks, managing client expectations, and selling ideas with conviction.',
-      link: 'https://www.youtube.com/@cjcawleydesign',
+      link: 'https://www.youtube.com/@hafsaarsalandesign',
       tag: 'Interview',
     },
     {
       title: 'Design Life & Freelance Realities',
       type: 'Panel Discussion',
       desc: 'Stripping back the BS of freelance design businesses, financial sustainability, and staying weird in a generic market.',
-      link: 'https://www.youtube.com/@cjcawleydesign',
+      link: 'https://www.youtube.com/@hafsaarsalandesign',
       tag: 'Panel',
     },
     {
       title: 'Brand Builder Academy Guest Workshop',
       type: 'Masterclass',
       desc: 'A live 90-minute workshop dissecting real-world identity projects from discovery sketch to delivery.',
-      link: 'https://www.youtube.com/@cjcawleydesign',
+      link: 'https://www.youtube.com/@hafsaarsalandesign',
       tag: 'Workshop',
     },
   ];
 
   return (
-    <div style={{ padding: '80px 40px 140px', maxWidth: '1300px', margin: '0 auto' }}>
+    <div className="page-container-responsive" style={{ maxWidth: '1300px' }}>
       {/* Hero */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
         gap: '60px',
         alignItems: 'center',
         marginBottom: '100px',

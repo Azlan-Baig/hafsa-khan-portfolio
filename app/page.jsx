@@ -72,17 +72,10 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section style={{
-        minHeight: '85vh',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '60px 40px 100px',
-        maxWidth: '1400px',
-        margin: '0 auto',
-      }}>
+      <section className="home-hero-section">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
           alignItems: 'center',
           gap: '60px',
           width: '100%',
@@ -118,7 +111,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Projects Grid */}
-      <section style={{ padding: '0 40px 80px', maxWidth: '1400px', margin: '0 auto' }}>
+      <section className="home-portfolio-section">
         <div className="portfolio-grid">
           {featuredProjects.map((project) => (
             <Link key={project.title} href={project.href} className="portfolio-card">
@@ -139,14 +132,10 @@ export default function HomePage() {
       <div style={{ borderTop: '1px solid #1a1a1a', maxWidth: '1400px', margin: '0 auto' }} />
 
       {/* ABOUT ME SECTION (FORTUNE FAVOURS THE BOLD / BRAVE / ...) */}
-      <section style={{
-        padding: '100px 40px',
-        maxWidth: '1400px',
-        margin: '0 auto',
-      }}>
+      <section className="home-about-section">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
           gap: '60px',
           alignItems: 'center',
         }}>
@@ -194,7 +183,7 @@ export default function HomePage() {
               maxWidth: '560px',
             }}>
               <p>
-                I’m CJ, a brand designer, logo specialist, and creative educator from the UK. For over a decade, I’ve been crafting badass brand identities for the rebels, the brave and the disruptors, the kind of people who zig when everyone else zags.
+                I’m Hafsa, a brand designer, logo specialist, and creative educator from the UK. For over a decade, I’ve been crafting badass brand identities for the rebels, the brave and the disruptors, the kind of people who zig when everyone else zags.
               </p>
               <p>
                 I’m on a mission to work with purpose-driven businesses, ambitious startups, and unconventional thinkers who aren’t afraid to truly stand out and capture their audience’s attention.
@@ -247,7 +236,7 @@ export default function HomePage() {
             }}>
               <img
                 src="/images/CJ-HEADSHOT-3.jpg"
-                alt="CJ Cawley Headshot"
+                alt="Hafsa Arsalan Headshot"
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -270,14 +259,10 @@ export default function HomePage() {
       </section>
 
       {/* 3-CARDS SECTION (MENTORSHIP, TOOLS & COURSES, TALKS & PODCASTS) */}
-      <section style={{
-        padding: '60px 40px 120px',
-        maxWidth: '1400px',
-        margin: '0 auto',
-      }}>
+      <section className="home-cards-section">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
           gap: '30px',
         }}>
           {/* Card 1: Mentorship */}

@@ -38,7 +38,7 @@ export default function MentorshipPage() {
   ];
 
   return (
-    <div style={{ padding: '80px 40px 140px', maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="page-container-responsive">
       {/* Hero */}
       <div style={{ textAlign: 'center', marginBottom: '80px' }}>
         <span style={{

@@ -81,7 +81,7 @@ export default function CaseStudyLayout({
       )}
 
       {/* Dynamic Sections */}
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
+      <div className="case-study-content" style={{ maxWidth: '1400px', margin: '0 auto' }}>
         {sections.map((section, idx) => (
           <div key={idx} style={{ marginBottom: '80px' }}>
             {/* Section Headings & Text */}
@@ -138,8 +138,8 @@ export default function CaseStudyLayout({
                 gridTemplateColumns: section.images.length === 1
                   ? '1fr'
                   : section.images.length === 2
-                  ? 'repeat(auto-fit, minmax(400px, 1fr))'
-                  : 'repeat(auto-fit, minmax(320px, 1fr))',
+                  ? 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))'
+                  : 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
                 gap: '24px',
                 alignItems: 'center',
               }}>

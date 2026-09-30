@@ -19,7 +19,7 @@ export default function CoachingPage() {
   };
 
   return (
-    <div style={{ padding: '80px 40px 140px', maxWidth: '1100px', margin: '0 auto' }}>
+    <div className="page-container-responsive" style={{ maxWidth: '1100px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '80px' }}>
         <span style={{
@@ -36,7 +36,7 @@ export default function CoachingPage() {
 
         <h1 style={{
           fontFamily: 'var(--font-heading)',
-          fontSize: 'clamp(36px, 5.5vw, 76px)',
+          fontSize: 'clamp(32px, 5.5vw, 76px)',
           fontWeight: 900,
           lineHeight: 1.05,
           letterSpacing: '-0.02em',
@@ -46,7 +46,7 @@ export default function CoachingPage() {
         </h1>
 
         <p style={{
-          fontSize: '20px',
+          fontSize: '19px',
           color: '#c4c4c4',
           maxWidth: '820px',
           margin: '0 auto 40px',
@@ -58,7 +58,7 @@ export default function CoachingPage() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
         gap: '60px',
         alignItems: 'start',
       }}>
@@ -94,12 +94,7 @@ export default function CoachingPage() {
         </div>
 
         {/* Right Column: Application Form */}
-        <div style={{
-          backgroundColor: '#0c0c0c',
-          border: '1px solid #222',
-          padding: '48px',
-          borderRadius: '4px',
-        }}>
+        <div className="form-card-responsive">
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', color: '#fff', marginBottom: '24px' }}>
             APPLY FOR 1-ON-1 COACHING
           </h2>

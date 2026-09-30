@@ -58,7 +58,7 @@ export default function WorkPage() {
   ];
 
   return (
-    <div style={{ padding: '80px 40px 120px', maxWidth: '1400px', margin: '0 auto' }}>
+    <div className="page-container-responsive" style={{ maxWidth: '1400px' }}>
       <div style={{ marginBottom: '60px', textAlign: 'center' }}>
         <h1 style={{
           fontFamily: 'var(--font-heading)',

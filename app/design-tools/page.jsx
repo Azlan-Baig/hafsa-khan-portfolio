@@ -46,7 +46,7 @@ export default function DesignToolsPage() {
   ];
 
   return (
-    <div style={{ padding: '80px 40px 140px', maxWidth: '1400px', margin: '0 auto' }}>
+    <div className="page-container-responsive" style={{ maxWidth: '1400px' }}>
       <div style={{ textAlign: 'center', marginBottom: '80px' }}>
         <h1 style={{
           fontFamily: 'var(--font-heading)',

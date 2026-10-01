@@ -64,7 +64,7 @@ export default function HarvardUniversityPage() {
       year="2024"
       heroImage="/images/harvard-university-logo-design-cj-cawley-09.jpg"
       sections={sections}
-      nextProject={{ title: 'PICKLED PIG', href: '/pickled-pig' }}
+      nextProject={{ title: 'SUSHI CLUB', href: '/sushi-club' }}
     />
   );
 }

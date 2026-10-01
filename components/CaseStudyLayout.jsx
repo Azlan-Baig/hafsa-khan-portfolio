@@ -8,6 +8,7 @@ export default function CaseStudyLayout({
   heroImage,
   sections,
   nextProject,
+  children,
 }) {
   return (
     <article style={{ paddingBottom: '120px' }}>
@@ -82,7 +83,7 @@ export default function CaseStudyLayout({
 
       {/* Dynamic Sections */}
       <div className="case-study-content" style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        {sections.map((section, idx) => (
+        {sections && sections.map((section, idx) => (
           <div key={idx} style={{ marginBottom: '80px' }}>
             {/* Section Headings & Text */}
             {(section.headings?.length > 0 || section.paragraphs?.length > 0) && (
@@ -167,6 +168,7 @@ export default function CaseStudyLayout({
             )}
           </div>
         ))}
+        {children}
       </div>
 
       {/* Next Project & CTA Footer */}

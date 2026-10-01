@@ -50,9 +50,9 @@ export default function WorkPage() {
       category: 'Rebrand & Identity',
     },
     {
-      title: 'PICKLED PIG',
-      href: '/pickled-pig',
-      image: '/images/pp-10.jpg',
+      title: 'SUSHI CLUB',
+      href: '/sushi-club',
+      image: '/images/sushi-club/storefront.jpg',
       category: 'Brand Identity',
     },
   ];

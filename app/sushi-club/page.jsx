@@ -30,7 +30,7 @@ export default function SushiClubPage() {
       year="2025"
       nextProject={{ title: 'MIKE LANE', href: '/mike-lane' }}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 0, margin: 0, padding: 0 }}>
         {slides.map((slide) => {
           if (slide.hasGif) {
             return (
@@ -38,11 +38,11 @@ export default function SushiClubPage() {
                 key={slide.id}
                 style={{
                   position: 'relative',
+                  width: '100%',
+                  lineHeight: 0,
+                  margin: 0,
+                  padding: 0,
                   overflow: 'hidden',
-                  borderRadius: '4px',
-                  backgroundColor: '#0a0a0a',
-                  border: '1px solid #1a1a1a',
-                  boxShadow: '0 12px 36px rgba(0, 0, 0, 0.45)',
                 }}
               >
                 <img
@@ -53,17 +53,19 @@ export default function SushiClubPage() {
                     width: '100%',
                     height: 'auto',
                     display: 'block',
+                    margin: 0,
+                    padding: 0,
                   }}
                 />
                 {/* Animated GIF in the left dark section */}
                 <div
                   style={{
                     position: 'absolute',
-                    top: '4.63%',
-                    left: '2.6%',
-                    width: '46.84%',
-                    height: '90.71%',
-                    backgroundColor: '#313a45',
+                    top: '4.88%',
+                    left: '2.66%',
+                    width: '46.76%',
+                    height: '95.12%',
+                    backgroundColor: '#2c3339',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -92,11 +94,11 @@ export default function SushiClubPage() {
               key={slide.id}
               style={{
                 position: 'relative',
+                width: '100%',
+                lineHeight: 0,
+                margin: 0,
+                padding: 0,
                 overflow: 'hidden',
-                borderRadius: '4px',
-                backgroundColor: '#0a0a0a',
-                border: '1px solid #1a1a1a',
-                boxShadow: '0 12px 36px rgba(0, 0, 0, 0.45)',
               }}
             >
               <img
@@ -107,6 +109,8 @@ export default function SushiClubPage() {
                   width: '100%',
                   height: 'auto',
                   display: 'block',
+                  margin: 0,
+                  padding: 0,
                 }}
               />
             </div>

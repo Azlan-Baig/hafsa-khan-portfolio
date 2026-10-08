@@ -83,99 +83,305 @@ export default function CaseStudyLayout({
       )}
 
       {/* Dynamic Sections */}
-      <div
-        className="case-study-content"
-        style={
-          fullBleed
-            ? { width: '100%', margin: 0, padding: 0 }
-            : { maxWidth: '1400px', margin: '0 auto', padding: '0 24px' }
-        }
-      >
-        {sections && sections.map((section, idx) => (
-          <div key={idx} style={{ marginBottom: '80px' }}>
-            {/* Section Headings & Text */}
-            {(section.headings?.length > 0 || section.paragraphs?.length > 0) && (
-              <div style={{
-                maxWidth: '860px',
-                margin: '0 auto 48px',
-                textAlign: section.alignCenter ? 'center' : 'left',
-              }}>
-                {section.headings?.map((h, hIdx) => (
-                  <h2 key={hIdx} style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: 'clamp(28px, 4vw, 48px)',
-                    fontWeight: 800,
-                    lineHeight: 1.1,
-                    marginBottom: '20px',
-                    color: '#ffffff',
-                  }}>
-                    {h}
-                  </h2>
-                ))}
+      <div className="case-study-sections" style={{ width: '100%', margin: 0, padding: 0 }}>
+        {sections && sections.map((section, idx) => {
+          const isLight = section.theme === 'light' || section.backgroundColor === '#F8F8F8' || section.backgroundColor === '#ffffff';
+          const bg = section.backgroundColor || (isLight ? '#F8F8F8' : 'transparent');
+          const textColor = isLight ? '#000000' : '#ffffff';
+          const bodyColor = isLight ? '#000000' : '#d0d0d0';
 
-                {section.paragraphs?.map((p, pIdx) => (
-                  <p key={pIdx} style={{
-                    fontSize: '18px',
-                    color: '#d0d0d0',
-                    lineHeight: 1.7,
-                    marginBottom: '20px',
-                  }}>
-                    {p}
-                  </p>
-                ))}
+          const hasText = Boolean(section.headings?.length > 0 || section.paragraphs?.length > 0);
+          const hasAside = Boolean(section.asideImage);
+          const isSplit = section.layout === 'split' || (!hasAside && (section.headings?.length ?? 0) > 0 && (section.paragraphs?.length ?? 0) > 0 && section.layout !== 'standard');
 
-                {section.quote && (
-                  <blockquote style={{
-                    borderLeft: '4px solid var(--accent-orange)',
-                    paddingLeft: '24px',
-                    margin: '32px 0',
-                    fontSize: '22px',
-                    fontStyle: 'italic',
-                    color: '#ffffff',
-                    lineHeight: 1.5,
-                  }}>
-                    “{section.quote}”
-                  </blockquote>
-                )}
-              </div>
-            )}
+          return (
+            <section
+              key={idx}
+              className={`case-study-section ${isLight ? 'theme-light' : 'theme-dark'}`}
+              style={{
+                width: '100%',
+                backgroundColor: bg,
+                color: textColor,
+                margin: 0,
+                padding: 0,
+                boxSizing: 'border-box',
+              }}
+            >
+              {hasText && (
+                <div
+                  style={{
+                    maxWidth: '1360px',
+                    margin: '0 auto',
+                    padding: 'clamp(48px, 6vw, 100px) clamp(20px, 4vw, 60px)',
+                    boxSizing: 'border-box',
+                  }}
+                >
+                  {hasAside ? (
+                    /* Layout: Text on Left (Heading + Paragraphs), Aside Media on Right */
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
+                        gap: 'clamp(32px, 5vw, 64px)',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <div>
+                        {section.headings?.map((h, hIdx) => (
+                          <h2
+                            key={hIdx}
+                            style={{
+                              fontFamily: "'Moderate', var(--font-body), sans-serif",
+                              fontSize: 'clamp(28px, 3.5vw, 41px)',
+                              fontWeight: 500,
+                              lineHeight: 1.25,
+                              letterSpacing: '-0.01em',
+                              textTransform: 'none',
+                              color: textColor,
+                              margin: 0,
+                              marginBottom: '20px',
+                            }}
+                          >
+                            {h}
+                          </h2>
+                        ))}
 
-            {/* Section Images Grid */}
-            {section.images?.length > 0 && (
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: section.images.length === 1
-                  ? '1fr'
-                  : section.images.length === 2
-                  ? 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))'
-                  : 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-                gap: '24px',
-                alignItems: 'center',
-              }}>
-                {section.images.map((imgSrc, imgIdx) => (
-                  <div key={imgIdx} style={{
-                    overflow: 'hidden',
-                    borderRadius: '4px',
-                    backgroundColor: '#0a0a0a',
-                    border: '1px solid #1a1a1a',
-                  }}>
-                    <img
-                      src={imgSrc}
-                      alt={`${title} showcase ${imgIdx + 1}`}
-                      loading="lazy"
+                        {section.paragraphs?.map((p, pIdx) => (
+                          <p
+                            key={pIdx}
+                            style={{
+                              fontFamily: "'Moderate', var(--font-body), sans-serif",
+                              fontSize: '16px',
+                              lineHeight: '26px',
+                              fontWeight: 400,
+                              color: bodyColor,
+                              margin: 0,
+                              marginBottom: '20px',
+                            }}
+                          >
+                            {p}
+                          </p>
+                        ))}
+
+                        {section.quote && (
+                          <blockquote
+                            style={{
+                              borderLeft: '4px solid var(--accent-orange)',
+                              paddingLeft: '24px',
+                              margin: '28px 0',
+                              fontSize: '20px',
+                              fontStyle: 'italic',
+                              color: textColor,
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            “{section.quote}”
+                          </blockquote>
+                        )}
+                      </div>
+
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          padding: '10px',
+                        }}
+                      >
+                        <img
+                          src={section.asideImage}
+                          alt={section.headings?.[0] || 'Showcase visual'}
+                          loading="lazy"
+                          style={{
+                            maxWidth: '100%',
+                            maxHeight: '520px',
+                            width: 'auto',
+                            height: 'auto',
+                            display: 'block',
+                            objectFit: 'contain',
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ) : isSplit ? (
+                    /* Layout: Split (Heading on Left 50%, Paragraphs on Right 50%) */
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
+                        gap: 'clamp(24px, 5vw, 64px)',
+                        alignItems: 'start',
+                      }}
+                    >
+                      <div>
+                        {section.headings?.map((h, hIdx) => (
+                          <h2
+                            key={hIdx}
+                            style={{
+                              fontFamily: "'Moderate', var(--font-body), sans-serif",
+                              fontSize: 'clamp(28px, 3.5vw, 41px)',
+                              fontWeight: 500,
+                              lineHeight: 1.25,
+                              letterSpacing: '-0.01em',
+                              textTransform: 'none',
+                              color: textColor,
+                              margin: 0,
+                              marginBottom: '20px',
+                            }}
+                          >
+                            {h}
+                          </h2>
+                        ))}
+                      </div>
+
+                      <div>
+                        {section.paragraphs?.map((p, pIdx) => (
+                          <p
+                            key={pIdx}
+                            style={{
+                              fontFamily: "'Moderate', var(--font-body), sans-serif",
+                              fontSize: '16px',
+                              lineHeight: '26px',
+                              fontWeight: 400,
+                              color: bodyColor,
+                              margin: 0,
+                              marginBottom: '20px',
+                            }}
+                          >
+                            {p}
+                          </p>
+                        ))}
+
+                        {section.quote && (
+                          <blockquote
+                            style={{
+                              borderLeft: '4px solid var(--accent-orange)',
+                              paddingLeft: '24px',
+                              margin: '28px 0',
+                              fontSize: '20px',
+                              fontStyle: 'italic',
+                              color: textColor,
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            “{section.quote}”
+                          </blockquote>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    /* Layout: Standard / Centered max-width block */
+                    <div
+                      style={{
+                        maxWidth: '860px',
+                        margin: section.alignCenter ? '0 auto' : '0',
+                        textAlign: section.alignCenter ? 'center' : 'left',
+                      }}
+                    >
+                      {section.headings?.map((h, hIdx) => (
+                        <h2
+                          key={hIdx}
+                          style={{
+                            fontFamily: "'Moderate', var(--font-body), sans-serif",
+                            fontSize: 'clamp(28px, 3.5vw, 41px)',
+                            fontWeight: 500,
+                            lineHeight: 1.25,
+                            letterSpacing: '-0.01em',
+                            textTransform: 'none',
+                            color: textColor,
+                            margin: 0,
+                            marginBottom: '20px',
+                          }}
+                        >
+                          {h}
+                        </h2>
+                      ))}
+
+                      {section.paragraphs?.map((p, pIdx) => (
+                        <p
+                          key={pIdx}
+                          style={{
+                            fontFamily: "'Moderate', var(--font-body), sans-serif",
+                            fontSize: '16px',
+                            lineHeight: '26px',
+                            fontWeight: 400,
+                            color: bodyColor,
+                            margin: 0,
+                            marginBottom: '20px',
+                          }}
+                        >
+                          {p}
+                        </p>
+                      ))}
+
+                      {section.quote && (
+                        <blockquote
+                          style={{
+                            borderLeft: '4px solid var(--accent-orange)',
+                            paddingLeft: '24px',
+                            margin: '28px 0',
+                            fontSize: '20px',
+                            fontStyle: 'italic',
+                            color: textColor,
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          “{section.quote}”
+                        </blockquote>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Images Grid */}
+              {section.images?.length > 0 && (
+                <div
+                  style={{
+                    width: '100%',
+                    display: 'grid',
+                    gridTemplateColumns:
+                      section.images.length === 1
+                        ? '1fr'
+                        : section.images.length === 2
+                        ? 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))'
+                        : 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))',
+                    gap: section.gap !== undefined ? section.gap : 0,
+                    margin: 0,
+                    padding: 0,
+                    boxSizing: 'border-box',
+                  }}
+                >
+                  {section.images.map((imgSrc, imgIdx) => (
+                    <div
+                      key={imgIdx}
                       style={{
                         width: '100%',
-                        height: 'auto',
-                        display: 'block',
-                        objectFit: 'cover',
+                        lineHeight: 0,
+                        margin: 0,
+                        padding: 0,
+                        overflow: 'hidden',
                       }}
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+                    >
+                      <img
+                        src={imgSrc}
+                        alt={`${title} showcase ${imgIdx + 1}`}
+                        loading="lazy"
+                        style={{
+                          width: '100%',
+                          height: 'auto',
+                          display: 'block',
+                          margin: 0,
+                          padding: 0,
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
+          );
+        })}
         {children}
       </div>
 

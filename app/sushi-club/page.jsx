@@ -268,13 +268,14 @@ export default function SushiClubPage() {
             <div>
               <h2
                 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: 'clamp(32px, 4.5vw, 56px)',
-                  fontWeight: 800,
-                  lineHeight: 1.1,
+                  fontFamily: "'Moderate', var(--font-body), sans-serif",
+                  fontSize: 'clamp(28px, 3.5vw, 41px)',
+                  fontWeight: 500,
+                  lineHeight: 1.25,
+                  letterSpacing: '-0.01em',
+                  textTransform: 'none',
                   color: '#ffffff',
                   marginBottom: '24px',
-                  textTransform: 'capitalize',
                 }}
               >
                 Chopsticks First

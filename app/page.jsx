@@ -67,6 +67,11 @@ export default function HomePage() {
       href: '/case-studies/film-weston',
       image: '/images/Vertical-Flag-PSD-Mockup_VSCO-scaled.jpg',
     },
+    {
+      title: 'SUSHI CLUB',
+      href: '/sushi-club',
+      image: '/images/sushi-club/storefront.jpg',
+    },
   ];
 
   return (

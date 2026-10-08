@@ -9,6 +9,7 @@ export default function CaseStudyLayout({
   sections,
   nextProject,
   children,
+  fullBleed = false,
 }) {
   return (
     <article style={{ paddingBottom: '120px' }}>
@@ -82,7 +83,14 @@ export default function CaseStudyLayout({
       )}
 
       {/* Dynamic Sections */}
-      <div className="case-study-content" style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <div
+        className="case-study-content"
+        style={
+          fullBleed
+            ? { width: '100%', margin: 0, padding: 0 }
+            : { maxWidth: '1400px', margin: '0 auto', padding: '0 24px' }
+        }
+      >
         {sections && sections.map((section, idx) => (
           <div key={idx} style={{ marginBottom: '80px' }}>
             {/* Section Headings & Text */}

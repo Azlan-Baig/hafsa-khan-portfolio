@@ -13,53 +13,55 @@ export default function CaseStudyLayout({
 }) {
   return (
     <article style={{ paddingBottom: '120px' }}>
-      {/* Hero Header */}
-      <header style={{
-        padding: '80px 40px 60px',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        textAlign: 'center',
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '16px',
-          marginBottom: '20px',
-          fontFamily: 'var(--font-mono)',
-          fontSize: '14px',
-          color: 'var(--accent-orange)',
-          textTransform: 'uppercase',
-          letterSpacing: '0.1em',
+      {/* Hero Header — only renders when title has content */}
+      {title && (
+        <header style={{
+          padding: '80px 40px 60px',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          textAlign: 'center',
         }}>
-          {category && <span>{category}</span>}
-          {category && year && <span>•</span>}
-          {year && <span>{year}</span>}
-        </div>
-
-        <h1 style={{
-          fontFamily: 'var(--font-heading)',
-          fontSize: 'clamp(44px, 8vw, 104px)',
-          fontWeight: 900,
-          lineHeight: 0.95,
-          letterSpacing: '-0.02em',
-          textTransform: 'uppercase',
-          marginBottom: '24px',
-        }}>
-          {title}
-        </h1>
-
-        {subtitle && (
-          <p style={{
-            fontSize: 'clamp(18px, 2.5vw, 24px)',
-            color: '#c0c0c0',
-            maxWidth: '820px',
-            margin: '0 auto',
-            lineHeight: 1.5,
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '16px',
+            marginBottom: '20px',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '14px',
+            color: 'var(--accent-orange)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
           }}>
-            {subtitle}
-          </p>
-        )}
-      </header>
+            {category && <span>{category}</span>}
+            {category && year && <span>•</span>}
+            {year && <span>{year}</span>}
+          </div>
+
+          <h1 style={{
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'clamp(44px, 8vw, 104px)',
+            fontWeight: 900,
+            lineHeight: 0.95,
+            letterSpacing: '-0.02em',
+            textTransform: 'uppercase',
+            marginBottom: '24px',
+          }}>
+            {title}
+          </h1>
+
+          {subtitle && (
+            <p style={{
+              fontSize: 'clamp(18px, 2.5vw, 24px)',
+              color: '#c0c0c0',
+              maxWidth: '820px',
+              margin: '0 auto',
+              lineHeight: 1.5,
+            }}>
+              {subtitle}
+            </p>
+          )}
+        </header>
+      )}
 
       {/* Hero Image */}
       {heroImage && (

@@ -38,39 +38,19 @@ export default function HomePage() {
 
   const featuredProjects = [
     {
-      title: 'MIKE LANE',
-      href: '/mike-lane',
-      image: '/images/MKLN-ANIMATION-FOOTAGE-ezgif.com-video-to-gif-converter.gif',
-    },
-    {
-      title: 'RABBIT FOOT',
-      href: '/rabbit-foot',
-      image: '/images/rabbit-foot-cover-image.png',
-    },
-    {
-      title: 'LOGOS',
-      href: '/logo-marks',
-      image: '/images/cj-cawley-logo-marks-3.gif',
-    },
-    {
-      title: 'DOSTI',
-      href: '/dosti',
-      image: '/images/dosti-cj-cawley-35.png',
-    },
-    {
-      title: 'NERDS',
-      href: '/nerds',
-      image: '/images/nerds.gif',
-    },
-    {
-      title: 'FILM WESTON',
-      href: '/case-studies/film-weston',
-      image: '/images/Vertical-Flag-PSD-Mockup_VSCO-scaled.jpg',
+      title: 'JAMMED',
+      href: '/jammed',
+      image: '/images/thumbnails/jammed.jpg',
     },
     {
       title: 'SUSHI CLUB',
       href: '/sushi-club',
-      image: '/images/sushi-club/storefront.jpg',
+      image: '/images/thumbnails/sushi-club.png',
+    },
+    {
+      title: 'BAD BUN',
+      href: '/bad-bun',
+      image: '/images/thumbnails/bad-bun.png',
     },
   ];
 
@@ -119,16 +99,35 @@ export default function HomePage() {
       <section className="home-portfolio-section">
         <div className="portfolio-grid">
           {featuredProjects.map((project) => (
-            <Link key={project.title} href={project.href} className="portfolio-card">
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-              />
-              <div className="portfolio-card-overlay">
-                <span className="portfolio-card-title">{project.title}</span>
-              </div>
-            </Link>
+            project.external ? (
+              <a
+                key={project.title}
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="portfolio-card"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                />
+                <div className="portfolio-card-overlay">
+                  <span className="portfolio-card-title">{project.title}</span>
+                </div>
+              </a>
+            ) : (
+              <Link key={project.title} href={project.href} className="portfolio-card">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                />
+                <div className="portfolio-card-overlay">
+                  <span className="portfolio-card-title">{project.title}</span>
+                </div>
+              </Link>
+            )
           ))}
         </div>
       </section>

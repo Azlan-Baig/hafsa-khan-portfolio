@@ -38,7 +38,7 @@ export default function Header() {
       return (
         pathname === '/case-studies' ||
         pathname.startsWith('/case-studies/') ||
-        ['/mike-lane', '/rabbit-foot', '/dosti', '/nerds', '/sushi-club', '/pickled-pig'].includes(pathname)
+        ['/sushi-club', '/bad-bun', '/jammed'].includes(pathname)
       );
     }
     return pathname === href;

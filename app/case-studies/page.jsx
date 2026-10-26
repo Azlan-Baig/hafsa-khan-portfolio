@@ -8,52 +8,29 @@ export const metadata = {
 export default function WorkPage() {
   const projects = [
     {
-      title: 'MIKE LANE',
-      href: '/mike-lane',
-      image: '/images/MKLN-ANIMATION-FOOTAGE-ezgif.com-video-to-gif-converter.gif',
-      category: 'Brand Identity',
+      title: 'JAMMED',
+      href: '/jammed',
+      image: '/images/thumbnails/jammed.jpg',
+      category: 'Packaging & Visual Identity',
     },
     {
-      title: 'RABBIT FOOT',
-      href: '/rabbit-foot',
-      image: '/images/rabbit-foot-cover-image.png',
+      title: 'PACK PRO+',
+      href: 'https://www.behance.net/gallery/247615881/PACK-PRO',
+      image: '/images/thumbnails/pack-pro.png',
       category: 'Brand Identity & Packaging',
-    },
-    {
-      title: 'LOGOS',
-      href: '/logo-marks',
-      image: '/images/cj-cawley-logo-marks-3.gif',
-      category: 'Logo Marks & Badges',
-    },
-    {
-      title: 'DOSTI',
-      href: '/dosti',
-      image: '/images/dosti-cj-cawley-35.png',
-      category: 'Brand Identity',
-    },
-    {
-      title: 'NERDS',
-      href: '/nerds',
-      image: '/images/nerds.gif',
-      category: 'Brand Identity & Merchandise',
-    },
-    {
-      title: 'FILM WESTON',
-      href: '/case-studies/film-weston',
-      image: '/images/Vertical-Flag-PSD-Mockup_VSCO-scaled.jpg',
-      category: 'Visual Identity',
-    },
-    {
-      title: 'HARVARD UNIVERSITY',
-      href: '/case-studies/harvard-university-hfcu',
-      image: '/images/harvard-university-logo-design-cj-cawley-09.jpg',
-      category: 'Rebrand & Identity',
+      external: true,
     },
     {
       title: 'SUSHI CLUB',
       href: '/sushi-club',
-      image: '/images/sushi-club/storefront.jpg',
-      category: 'Brand Identity',
+      image: '/images/thumbnails/sushi-club.png',
+      category: 'Brand Identity & Packaging',
+    },
+    {
+      title: 'BAD BUN',
+      href: '/bad-bun',
+      image: '/images/thumbnails/bad-bun.png',
+      category: 'Brand Identity & Mascot',
     },
   ];
 
@@ -82,28 +59,59 @@ export default function WorkPage() {
 
       <div className="portfolio-grid">
         {projects.map((project) => (
-          <Link key={project.title} href={project.href} className="portfolio-card">
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-            />
-            <div className="portfolio-card-overlay">
-              <div>
-                <span className="portfolio-card-title">{project.title}</span>
-                <p style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '13px',
-                  color: 'var(--accent-orange)',
-                  marginTop: '8px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em'
-                }}>
-                  {project.category}
-                </p>
+          project.external ? (
+            <a
+              key={project.title}
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio-card"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+              />
+              <div className="portfolio-card-overlay">
+                <div>
+                  <span className="portfolio-card-title">{project.title}</span>
+                  <p style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '13px',
+                    color: 'var(--accent-orange)',
+                    marginTop: '8px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}>
+                    {project.category}
+                  </p>
+                </div>
               </div>
-            </div>
-          </Link>
+            </a>
+          ) : (
+            <Link key={project.title} href={project.href} className="portfolio-card">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+              />
+              <div className="portfolio-card-overlay">
+                <div>
+                  <span className="portfolio-card-title">{project.title}</span>
+                  <p style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '13px',
+                    color: 'var(--accent-orange)',
+                    marginTop: '8px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}>
+                    {project.category}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          )
         ))}
       </div>
     </div>

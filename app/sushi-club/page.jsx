@@ -12,7 +12,7 @@ export default function SushiClubPage() {
       subtitle="A Brand Identity Built on Chopsticks & Authenticity."
       category="Food & Beverage Identity"
       year="2025"
-      nextProject={{ title: 'MIKE LANE', href: '/mike-lane' }}
+      nextProject={{ title: 'BAD BUN', href: '/bad-bun' }}
       fullBleed={true}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: 0, margin: 0, padding: 0 }}>
